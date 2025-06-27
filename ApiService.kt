@@ -11,13 +11,13 @@ interface ApiService {
     suspend fun getUsers(): List<User>
 
     @POST("users/{user_id}/posts/")
-    suspend fun createPost(@Path("user_id") userId: Int, @Body post: `CreatePostRequest.kt`): Post
+    suspend fun createPost(@Path("user_id") userId: Int, @Body post: CreatePostRequest): Post
 
     @GET("users/{user_id}/posts/")
     suspend fun getPosts(@Path("user_id") userId: Int): List<Post>
 
     @PUT("posts/{post_id}/")
-    suspend fun updatePost(@Path("post_id") postId: Int, @Body post: `CreatePostRequest.kt`): Post
+    suspend fun updatePost(@Path("post_id") postId: Int, @Body post: CreatePostRequest): Post
 
     @DELETE("posts/{post_id}/")
     suspend fun deletePost(@Path("post_id") postId: Int)
